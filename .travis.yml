@@ -1,0 +1,16 @@
+language: go
+
+go:
+  - 1.9.x
+
+jobs:
+  include:
+    - stage: test
+      install:
+        - export GOPATH=$TRAVIS_BUILD_DIR
+        - export PATH=$HOME/gopath/bin:$PATH
+        - go env
+      script:
+        - pwd
+        - ls -la .
+        - go test -cover github.com/mihard/ru-morph -test.v -test.run ^Test
