@@ -7,7 +7,6 @@ jobs:
   include:
     - stage: test
       install:
-        - export GOPATH=$TRAVIS_BUILD_DIR/../../..
         - export PATH=$HOME/gopath/bin:$PATH
         - go env
       script:
